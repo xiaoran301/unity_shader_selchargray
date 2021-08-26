@@ -76,16 +76,16 @@
         }
 
 
-        fixed4 surf (VertexOutput in) : SV_Target
+        fixed4 surf (VertexOutput input) : SV_Target
         {
-            float2 gw = in.uv1.xy /in.uv1.ww;
+            float2 gw = input.uv1.xy /input.uv1.ww;
             gw = gw + float2(-0.5,-0.5);
             gw.x = dot(_SSGradientDirection.xy, gw.xy);
             gw.x = gw.x + 0.5;
             gw.x = clamp(gw.x,0.0,1);
 
             float4 c0 = (_SSGradientColor1 - _SSGradientColor0)*gw.x + _SSGradientColor0;
-            float4 c2 = tex2D (_MainTex, in.uv0) ;
+            float4 c2 = tex2D (_MainTex, input.uv0) ;
             float4 c1 = (_Color - c2)*_Color.w + c2;
             c1 = (c1 - _ConcealmentColor) * _ConcealmentColor.w + _ConcealmentColor;
             c0 = (c1*c0 - c1)*c0.w + c1;
