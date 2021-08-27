@@ -7,7 +7,6 @@ unlocked char gray effect analysis
 
 
 ## vs
-
 uniform vec4 \_ProjectionParams;
 
 uniform vec4 hlslcc\_mtx4x4unity\_ObjectToWorld[4];
@@ -43,7 +42,7 @@ void main()
 ` `u\_xlat1 = u\_xlat0 + hlslcc\_mtx4x4unity\_ObjectToWorld[3];
 
 
-|<p>Makefile</p><p>// 世界空间坐标</p><p>vs\_TEXCOORD0 = hlslcc\_mtx4x4unity\_ObjectToWorld[3] \* in\_POSITION0.wwww + u\_xlat0;</p><p></p><p></p><p>u\_xlat0 = u\_xlat1.yyyy \* hlslcc\_mtx4x4unity\_MatrixVP[1];</p><p>u\_xlat0 = hlslcc\_mtx4x4unity\_MatrixVP[0] \* u\_xlat1.xxxx + u\_xlat0;</p><p>u\_xlat0 = hlslcc\_mtx4x4unity\_MatrixVP[2] \* u\_xlat1.zzzz + u\_xlat0;</p><p>u\_xlat0 = hlslcc\_mtx4x4unity\_MatrixVP[3] \* u\_xlat1.wwww + u\_xlat0;</p><p>gl\_Position = u\_xlat0;</p><p></p><p></p><p>// 裁切空间坐标</p><p>u\_xlat0.y = u\_xlat0.y \* \_ProjectionParams.x;</p><p>u\_xlat1.xzw = u\_xlat0.xwy \* vec3(0.5, 0.5, 0.5);</p><p>vs\_TEXCOORD1.zw = u\_xlat0.zw;</p><p>vs\_TEXCOORD1.xy = u\_xlat1.zz + u\_xlat1.xw;</p><p></p><p>// uv</p><p>vs\_TEXCOORD4.xy = in\_TEXCOORD0.xy \* \_MainTex\_ST.xy + \_MainTex\_ST.zw;</p><p>vs\_TEXCOORD4.zw = in\_TEXCOORD0.zw;</p><p>return;</p>|
+|<p>// 世界空间坐标</p><p>vs\_TEXCOORD0 = hlslcc\_mtx4x4unity\_ObjectToWorld[3] \* in\_POSITION0.wwww + u\_xlat0;</p><p></p><p></p><p>u\_xlat0 = u\_xlat1.yyyy \* hlslcc\_mtx4x4unity\_MatrixVP[1];</p><p>u\_xlat0 = hlslcc\_mtx4x4unity\_MatrixVP[0] \* u\_xlat1.xxxx + u\_xlat0;</p><p>u\_xlat0 = hlslcc\_mtx4x4unity\_MatrixVP[2] \* u\_xlat1.zzzz + u\_xlat0;</p><p>u\_xlat0 = hlslcc\_mtx4x4unity\_MatrixVP[3] \* u\_xlat1.wwww + u\_xlat0;</p><p>gl\_Position = u\_xlat0;</p><p></p><p></p><p>// 裁切空间坐标</p><p>u\_xlat0.y = u\_xlat0.y \* \_ProjectionParams.x;</p><p>u\_xlat1.xzw = u\_xlat0.xwy \* vec3(0.5, 0.5, 0.5);</p><p>vs\_TEXCOORD1.zw = u\_xlat0.zw;</p><p>vs\_TEXCOORD1.xy = u\_xlat1.zz + u\_xlat1.xw;</p><p></p><p>// uv</p><p>vs\_TEXCOORD4.xy = in\_TEXCOORD0.xy \* \_MainTex\_ST.xy + \_MainTex\_ST.zw;</p><p>vs\_TEXCOORD4.zw = in\_TEXCOORD0.zw;</p><p>return;</p>|
 | :- |
 }
 
