@@ -3,13 +3,13 @@
 {
     Properties
     {
-        _Color ("Color", Color) = (1,1,1,1)
+        _Color ("Color", Color) = (0.15,0.32,0.37,0.9)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _SSGradientDirection("Gradient Dir",Vector) = (1,0,0,0)
-        _SSGradientColor0("Gradient Color0",Color) = (1,0,0,1)
-        _SSGradientColor1("Gradient Color1",Color) = (1,0,0,1)
-        _ConcealmentColor("conceal Color",Color) = (1,0,0,1)
-        _FadeGameplayEffects("gameplay effect",Range(0,1)) = 1
+        _SSGradientDirection("Gradient Dir",Vector) = (0,0,0,0)
+        _SSGradientColor0("Gradient Color0",Color) = (0,0,0,0)
+        _SSGradientColor1("Gradient Color1",Color) = (0,0,0,0)
+        _ConcealmentColor("conceal Color",Color) = (0,0,0,1)
+        _FadeGameplayEffects("gameplay effect",Range(0,1)) = 0
        
     }
     SubShader
